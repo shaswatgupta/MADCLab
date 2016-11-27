@@ -1,0 +1,296 @@
+---
+layout: member
+title: "Members"
+description: "Collaborators working on this project."
+header-img: "img/home-bg.jpg"
+---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+        function isScrolledTo(elem) {
+            var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+            var docViewBottom = docViewTop + $(window).height();
+            var elemTop = $(elem).offset().top; //num of pixels above the elem
+            var elemBottom = elemTop + $(elem).height();
+            return ((elemTop <= docViewTop));
+        }
+        var catcher = $('#catcher');
+        var sticky = $('#sticky');
+        $(window).scroll(function() {
+            if(isScrolledTo(sticky)) {
+                sticky.css('position','fixed');
+                sticky.css('top','0px');
+            }
+			var stopHeight = catcher.offset().top + catcher.height();
+			if ( stopHeight > sticky.offset().top) {
+                sticky.css('position','absolute');
+                sticky.css('top',stopHeight);
+            }
+        });
+    });
+</script>
+
+
+
+<div class="col-lg-4 col-md-4 col-sm-2 col-xs-2">
+<div id="catcher">
+	<!--catcher-->
+	
+</ul>
+</ul>
+</div>
+<div id="sticky">
+	<!--sticky-->
+	<ul class="sidebar" style=" float: left; padding: 40px;  width: 300px;   background-color: lightgrey;">
+	<a class="smoothScroll" href="#faculty">Faculty Adviser</a><br><br>
+	<a class="smoothScroll" href="#phd" >Doctoral Researchers</a><br><br>
+	<a class="smoothScroll" href="#gs">Graduate Students</a><br><br>
+	<a class="smoothScroll" href="#ugs">UG Students</a><br><br>
+	<a class="smoothScroll" href="#alumni">Alumni</a><br>
+</ul>
+</div>
+</div>
+<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+<section class="faculty" id="faculty">
+
+<hr>
+<center><h1 style="padding: 40px;"><u>Faculty Adviser</u></h1></center>
+{% for member in site.data.members %} {% if member.visible == "faculty" %}
+
+	<img src="{{ member.img }}" style="margin-top:0px; border-radius: 50%; margin-bottom:5px; margin-right:10px; float:left; width:120px; height: 120px !important">
+	
+	<h1 style="font-size: 20px;">{{ member.name }}</h1>
+	
+	<h2 style="font-size: 15px;">{{ member.role }}</h2>
+	
+	{% if member.github %} 
+	<span class="social-share-googleplus"><a href="https://github.com/{{ member.github }}" title="Github"><i class="fa fa-github"></i></a></span> 
+	{% endif %}
+	{% if member.gplus %}
+	<span class="social-share-googleplus"><a href="{{ member.gplus }}" title="Google Plus"><i class="fa fa-google-plus"></i></a></span>
+	{% endif %}
+	{% if member.url %}
+	<span class="social-share-googleplus"><a href="{{ member.url }}" title="Website"><i class="fa fa-user-circle"></i></a></span>
+	{% endif %}
+	
+	{% if member.fb %}
+	<span class="social-share-googleplus"><a href="{{ member.fb }}" title="Facebook"><i class="fa fa-facebook"></i></a></span>
+	{% endif %}
+	{% if member.twitter %}
+	<span class="social-share-googleplus"><a href="{{ member.twitter }}" title="Twitter"><i class="fa fa-twitter"></i></a></span>
+	{% endif %}
+	{% if member.linkdin %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="LinkdIn"><i class="fa fa-linkedin"></i></a></span>
+	{% endif %}
+
+	{% if member.instagram %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="Instagram"><i class="fa fa-instagram" style="font-size:60px;"></i></a></span>
+	{% endif %}
+	</br>
+    <p style="font-size: 15px;">
+	{% if member.bio %} 
+	{{ member.bio }}
+	{% endif %}
+	</p>
+	<hr>
+
+{% endif %}{% endfor %}
+</section>
+
+
+<section class="phd" id="phd">
+
+<hr>
+<center><h1 style="padding: 30px;"><u>Doctoral Researchers</u></h1></center>
+{% for member in site.data.members %} {% if member.visible == "phd" %}
+
+	<img src="{{ member.img }}" style="margin-top:0px; border-radius: 50%; margin-bottom:5px; margin-right:10px; float:left; width:120px; height: 120px !important">
+	
+	<h1 style="font-size: 20px;">{{ member.name }}</h1>
+	
+	<h2 style="font-size: 15px;">{{ member.role }}</h2>
+	
+	{% if member.github %} 
+	<span class="social-share-googleplus"><a href="https://github.com/{{ member.github }}" title="Github"><i class="fa fa-github"></i></a></span> 
+	{% endif %}
+	{% if member.gplus %}
+	<span class="social-share-googleplus"><a href="{{ member.gplus }}" title="Google Plus"><i class="fa fa-google-plus"></i></a></span>
+	{% endif %}
+	{% if member.url %}
+	<span class="social-share-googleplus"><a href="{{ member.url }}" title="Website"><i class="fa fa-user-circle"></i></a></span>
+	{% endif %}
+	
+	{% if member.fb %}
+	<span class="social-share-googleplus"><a href="{{ member.fb }}" title="Facebook"><i class="fa fa-facebook"></i></a></span>
+	{% endif %}
+	{% if member.twitter %}
+	<span class="social-share-googleplus"><a href="{{ member.twitter }}" title="Twitter"><i class="fa fa-twitter"></i></a></span>
+	{% endif %}
+	{% if member.linkdin %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="LinkdIn"><i class="fa fa-linkedin"></i></a></span>
+	{% endif %}
+
+	{% if member.instagram %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="Instagram"><i class="fa fa-instagram" style="font-size:60px;"></i></a></span>
+	{% endif %}
+	</br>
+    <p style="font-size: 15px;">
+	{% if member.bio %} 
+	{{ member.bio }}
+	{% endif %}
+	</p>
+	<hr>
+
+{% endif %}{% endfor %}
+
+</section>
+
+
+<section id="gs">
+
+<hr>
+<center><h1 style="padding: 30px;"><u>Graduate Students</u></h1></center>
+{% for member in site.data.members %} {% if member.visible == "pg" %}
+
+	<img src="{{ member.img }}" style="margin-top:0px; margin-bottom:5px; border-radius: 50%; margin-right:10px; float:left; width:120px; height: 120px !important">
+	
+	<h1 style="font-size: 20px;">{{ member.name }}</h1>
+	
+	<h2 style="font-size: 15px;">{{ member.role }}</h2>
+	
+	{% if member.github %} 
+	<span class="social-share-googleplus"><a href="https://github.com/{{ member.github }}" title="Github"><i class="fa fa-github"></i></a></span> 
+	{% endif %}
+	{% if member.gplus %}
+	<span class="social-share-googleplus"><a href="{{ member.gplus }}" title="Google Plus"><i class="fa fa-google-plus"></i></a></span>
+	{% endif %}
+	{% if member.url %}
+	<span class="social-share-googleplus"><a href="{{ member.url }}" title="Website"><i class="fa fa-user-circle"></i></a></span>
+	{% endif %}
+	
+	{% if member.fb %}
+	<span class="social-share-googleplus"><a href="{{ member.fb }}" title="Facebook"><i class="fa fa-facebook"></i></a></span>
+	{% endif %}
+	{% if member.twitter %}
+	<span class="social-share-googleplus"><a href="{{ member.twitter }}" title="Twitter"><i class="fa fa-twitter"></i></a></span>
+	{% endif %}
+	{% if member.linkdin %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="LinkdIn"><i class="fa fa-linkedin"></i></a></span>
+	{% endif %}
+
+	{% if member.instagram %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="Instagram"><i class="fa fa-instagram" style="font-size:60px;"></i></a></span>
+	{% endif %}
+	</br>
+    <p style="font-size: 15px;">
+	{% if member.bio %} 
+	{{ member.bio }}
+	{% endif %}
+	</p>
+	<hr>
+
+{% endif %}{% endfor %}
+
+</section>
+
+
+<section id="ugs">
+
+<hr>
+<center><h1 style="padding: 30px;"><u>Under-Graduate Students</u></h1></center>
+{% for member in site.data.members %} {% if member.visible == "ug" %}
+
+	<img src="{{ member.img }}" style="margin-top:0px; margin-bottom:5px; margin-right:10px; border-radius: 50%; float:left; width:120px; height: 120px !important">
+	
+	<h1 style="font-size: 20px;">{{ member.name }}</h1>
+	
+	<h2 style="font-size: 15px;">{{ member.role }}</h2>
+	
+	{% if member.github %} 
+	<span class="social-share-googleplus"><a href="https://github.com/{{ member.github }}" title="Github"><i class="fa fa-github"></i></a></span> 
+	{% endif %}
+	{% if member.gplus %}
+	<span class="social-share-googleplus"><a href="{{ member.gplus }}" title="Google Plus"><i class="fa fa-google-plus"></i></a></span>
+	{% endif %}
+	{% if member.url %}
+	<span class="social-share-googleplus"><a href="{{ member.url }}" title="Website"><i class="fa fa-user-circle"></i></a></span>
+	{% endif %}
+	
+	{% if member.fb %}
+	<span class="social-share-googleplus"><a href="{{ member.fb }}" title="Facebook"><i class="fa fa-facebook"></i></a></span>
+	{% endif %}
+	{% if member.twitter %}
+	<span class="social-share-googleplus"><a href="{{ member.twitter }}" title="Twitter"><i class="fa fa-twitter"></i></a></span>
+	{% endif %}
+	{% if member.linkdin %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="LinkdIn"><i class="fa fa-linkedin"></i></a></span>
+	{% endif %}
+
+	{% if member.instagram %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="Instagram"><i class="fa fa-instagram" style="font-size:60px;"></i></a></span>
+	{% endif %}
+	</br>
+    <p style="font-size: 15px;">
+	{% if member.bio %} 
+	{{ member.bio }}
+	{% endif %}
+	</p>
+	<hr>
+
+{% endif %}{% endfor %}
+
+</section>
+
+
+<section id="alumni">
+
+<hr>
+<center><h1 style="padding: 30px;"><u>Alumni</u></h1></center>
+{% for member in site.data.members %} {% if member.visible == "alumni" %}
+
+	<img src="{{ member.img }}" style="border-radius: 50%; margin-top:0px; margin-bottom:5px; margin-right:10px; float:left; width:120px; height: 120px !important">
+	
+	<h1 style="font-size: 20px;">{{ member.name }}</h1>
+	
+	<h2 style="font-size: 15px;">{{ member.role }}</h2>
+	
+	{% if member.github %} 
+	<span class="social-share-googleplus"><a href="https://github.com/{{ member.github }}" title="Github"><i class="fa fa-github"></i></a></span> 
+	{% endif %}
+	{% if member.gplus %}
+	<span class="social-share-googleplus"><a href="{{ member.gplus }}" title="Google Plus"><i class="fa fa-google-plus"></i></a></span>
+	{% endif %}
+	{% if member.url %}
+	<span class="social-share-googleplus"><a href="{{ member.url }}" title="Website"><i class="fa fa-user-circle"></i></a></span>
+	{% endif %}
+	
+	{% if member.fb %}
+	<span class="social-share-googleplus"><a href="{{ member.fb }}" title="Facebook"><i class="fa fa-facebook"></i></a></span>
+	{% endif %}
+	{% if member.twitter %}
+	<span class="social-share-googleplus"><a href="{{ member.twitter }}" title="Twitter"><i class="fa fa-twitter"></i></a></span>
+	{% endif %}
+	{% if member.linkdin %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="LinkdIn"><i class="fa fa-linkedin"></i></a></span>
+	{% endif %}
+
+	{% if member.instagram %}
+	<span class="social-share-googleplus"><a href="{{ member.linkdin }}" title="Instagram"><i class="fa fa-instagram" style="font-size:60px;"></i></a></span>
+	{% endif %}
+	</br>
+    <p style="font-size: 15px;">
+	{% if member.bio %} 
+	{{ member.bio }}
+	{% endif %}
+	</p>
+	<hr>
+
+{% endif %}{% endfor %}
+
+</section>
+</div>
+
+

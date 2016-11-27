@@ -1,0 +1,15 @@
+---
+layout: home
+---
+
+<center><h1 style="padding: 20px;">News And Upcoming Events</h1></center>
+
+{% for news in site.data.news  %} {% if news.visible == true %}
+
+	
+	
+	<center><a style="font-size: 15px; ">{{ news.heading }},{{ news.date }}</a></center>
+	
+{% endif %}
+
+{% endfor %}

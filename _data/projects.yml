@@ -1,0 +1,33 @@
+#projects
+
+- heading: Externally Funded Projects 
+  subheading: short description of project
+  contributions: name of people contributed on this project
+  date: 2016-06-22 
+  url: externally-funded/index
+
+
+- heading: Under Graduate Projects 
+  subheading: short description of project
+  contributions: name of people contributed on this project
+  date: 2016-07-22
+  url: ug-projects/index
+
+- heading: Graduate projects 
+  subheading: short description of project
+  contributions: name of people contributed on this project
+  date: 2016-08-22
+  url: graduate-projects/index
+
+- heading: PHD Projects 
+  subheading: short description of project
+  contributions: name of people contributed on this project
+  date: 2016-09-22
+  url: phd-projects/index
+
+- heading: Other Projects 
+  subheading: short description of project
+  contributions: name of people contributed on this project
+  date: 2016-10-22
+  url: other-projects/index
+

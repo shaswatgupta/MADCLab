@@ -1,0 +1,43 @@
+---
+layout: home
+---
+<div class="col-md-7 col-sm-7 col-xs-7">
+{% for post in site.posts limit:4 %}
+
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta" style="margin-bottom:5px">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
+	<div class="notepad-index-post-tags" style="">
+		{% for tag in post.tags %}<a href="{{ site.baseurl }}/search/index.html#{{ tag | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} tag">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
+	</div>
+   
+</div>
+
+
+{% endfor %}
+</div>
+
+
+<div style="float: right; background: lightgrey" class="col-md-4 col-md-offset-0 col-sm-4 col-xs-4">
+
+<center><h3 style="font-size: 18px;">Upcoming Events</h3></center>
+
+
+{% for news in site.data.news limit:5 %} {% if news.visible == true %}
+
+    
+    
+  <a href="{{ news.url }}">  <p style="font-size: 15px; height: 0px; float: right;">{{ news.heading }},{{ news.date | date: '%B %d, %Y' }}</p></a>
+    
+{% endif %}{% endfor %}
+<a style="float: right; padding: 15px; font-size: 15px;" href="{{ site.baseurl }}/news">Read More <span style="font-size: 11px;">>></span></a>
+</div>
+
