@@ -6,7 +6,7 @@ url: "https://shaswatgupta.github.io/MADCLab"
 
 
 # Secondary Parameters
-baseurl: "/MADCLab"
+baseurl: ""
 header-img: img/home-bg.jpg
 headercolor: "#FFFFFF"
 logo: /img/logos/madclab-logo.png
